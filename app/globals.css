@@ -427,6 +427,7 @@ img {
   flex-direction: column;
   justify-content: flex-end;
   padding: 0 6vw max(7vh, env(safe-area-inset-bottom) + 28px);
+  container-type: inline-size;
 }
 
 .hero-kicker {
@@ -438,20 +439,27 @@ img {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3.6rem, 13vw, 9.5rem);
+  font-size: min(9.5rem, 11.5vw);
   font-weight: 800;
   letter-spacing: -0.07em;
-  line-height: 0.82;
+  line-height: 0.84;
   margin: 0;
+  max-width: 100%;
 }
 
-.hero-title span {
+.hero-lockup {
   display: block;
-  font-size: 0.28em;
+  white-space: nowrap;
+}
+
+.hero-tag {
+  display: block;
+  font-size: clamp(0.95rem, 0.28em, 1.7rem);
   letter-spacing: 0.08em;
   font-weight: 600;
-  margin-top: 18px;
+  margin-top: 14px;
   opacity: 0.9;
+  white-space: normal;
 }
 
 .hero-actions {
@@ -1992,11 +2000,11 @@ img {
   }
 
   .hero-title {
-    font-size: clamp(3.1rem, 22vw, 4.8rem);
+    letter-spacing: -0.06em;
   }
 
-  .hero-title span {
-    margin-top: 12px;
+  .hero-tag {
+    margin-top: 10px;
   }
 
   .hero-copy {

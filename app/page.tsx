@@ -30,10 +30,12 @@ export default function HomePage() {
           <div className="hero-copy">
             <p className="hero-kicker">New Spitalfields · London</p>
             <h1 className="hero-title">
-              CASA
-              <br />
-              FRUTAS
-              <span>House of Quality</span>
+              <span className="hero-lockup">
+                CASA
+                <br />
+                FRUTAS
+              </span>
+              <span className="hero-tag">House of Quality</span>
             </h1>
             <div className="hero-actions">
               <Link className="hero-btn" href="/products">
