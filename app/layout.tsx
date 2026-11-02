@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Outfit, Syne } from "next/font/google";
+import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-manrope",
 });
 
-const syne = Syne({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-fraunces",
+  axes: ["SOFT", "WONK"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${outfit.variable} ${syne.variable} h-full antialiased`}
+      className={`${manrope.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-paper font-sans text-ink">
         <a className="skip-link" href="#main">

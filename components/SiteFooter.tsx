@@ -6,7 +6,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <p className="footer-mark" aria-hidden="true">
-        CASA
+        Casa
       </p>
       <div className="footer-top">
         <div>

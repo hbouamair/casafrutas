@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SiteShell } from "@/components/SiteShell";
-import { ABOUT_COPY, PRODUCTS, SERVICES } from "@/lib/site";
+import { ABOUT_COPY, PRODUCTS } from "@/lib/site";
 
 const CROP = [
   "Tomatoes",
@@ -14,6 +14,12 @@ const CROP = [
 ];
 
 export default function HomePage() {
+  const core = {
+    ...PRODUCTS[0],
+    image: "/images/banners/untitled-33.jpg",
+  };
+  const rest = PRODUCTS.slice(1);
+
   return (
     <SiteShell overlay>
       <main id="main">
@@ -23,20 +29,31 @@ export default function HomePage() {
             src="/images/hero-farm-1.jpg"
             alt="Rows of agricultural production at sunrise"
           />
-          <video autoPlay muted loop playsInline poster="/images/hero-farm-1.jpg" aria-hidden="true">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/hero-farm-1.jpg"
+            aria-hidden="true"
+          >
             <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
           <div className="hero-veil" />
           <div className="hero-copy">
-            <p className="hero-kicker">New Spitalfields · London</p>
+            <p className="hero-kicker">New Spitalfields, London</p>
             <h1 className="hero-title">
               <span className="hero-lockup">
-                CASA
+                Casa
                 <br />
-                FRUTAS
+                Frutas
               </span>
               <span className="hero-tag">House of Quality</span>
             </h1>
+            <p className="hero-lede">
+              Fresh produce grown, graded and packed for wholesale, retail and
+              foodservice.
+            </p>
             <div className="hero-actions">
               <Link className="hero-btn" href="/products">
                 View produce
@@ -46,6 +63,13 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+        </section>
+
+        <section className="manifesto" aria-label="Our promise">
+          <p>
+            Mainly tomatoes — and everything in fresh produce. Grown with care,
+            moved with precision, supplied all year from Allen House.
+          </p>
         </section>
 
         <div className="crop-rail" aria-hidden="true">
@@ -75,45 +99,49 @@ export default function HomePage() {
           </article>
         </section>
 
-        <section className="programme">
-          <header className="programme-head">
+        <section className="atelier">
+          <header className="atelier-head">
             <h2 className="section-title">The programme.</h2>
             <p className="lede">
-              Tomatoes at the centre, with peppers, courgettes, onions and a rotating seasonal offer for wholesale, retail and foodservice.
+              Tomatoes at the centre, with peppers, courgettes, onions and a
+              rotating seasonal offer.
             </p>
           </header>
-          <div className="crates">
-            {PRODUCTS.map((item) => (
-              <Link key={item.slug} href={`/products#${item.slug}`}>
-                <img src={item.image} alt="" />
-                <span>{item.name}</span>
-              </Link>
-            ))}
+
+          <div className="atelier-stage">
+            <Link className="atelier-core" href={`/products#${core.slug}`}>
+              <img src={core.image} alt={core.name} />
+              <div className="atelier-core__copy">
+                <h3>{core.name}</h3>
+                <p>{core.text}</p>
+              </div>
+            </Link>
+
+            <div className="atelier-strip">
+              {rest.map((item) => (
+                <Link key={item.slug} href={`/products#${item.slug}`}>
+                  <img src={item.image} alt="" />
+                  <span>{item.name}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="house">
+        <section className="house house--folio">
           <img src="/images/brand/tomatoes-icon.png" alt="Fresh tomatoes" />
           <div className="house-copy">
             <h2 className="section-title">{ABOUT_COPY.lead}</h2>
             <p className="lede">{ABOUT_COPY.aim}</p>
-            <Link className="btn" href="/about">
-              Read our story
-            </Link>
+            <div className="house-actions">
+              <Link className="btn" href="/about">
+                Read our story
+              </Link>
+              <Link className="house-link" href="/services">
+                How we work
+              </Link>
+            </div>
           </div>
-        </section>
-
-        <section className="line">
-          <h2 className="section-title">Grow. Grade. Move.</h2>
-          {SERVICES.map((item) => (
-            <article key={item.title}>
-              <img src={item.image} alt="" />
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </article>
-          ))}
         </section>
 
         <section className="trust">
