@@ -9,6 +9,10 @@ export const metadata: Metadata = { title: "Produce" };
 
 const CROPS = PRODUCTS.map(({ slug, name }) => ({ slug, name }));
 
+const PRODUCT_IMAGES: Record<string, string> = {
+  tomatoes: "/images/banners/untitled-33.jpg",
+};
+
 export default function ProductsPage() {
   return (
     <SiteShell overlay>
@@ -28,27 +32,41 @@ export default function ProductsPage() {
           </div>
         </PageMast>
 
+        <section className="manifesto" aria-label="Produce programme">
+          <p>
+            A full fresh-produce programme — graded and packed to customer
+            specification, all year.
+          </p>
+        </section>
+
         <CropIndex items={CROPS} />
 
-        {PRODUCTS.map((item, index) => (
-          <section
-            key={item.slug}
-            id={item.slug}
-            className={[
-              "stall",
-              index === 0 ? "stall--core" : "",
-              index % 2 === 1 ? "stall--flip" : "",
-            ]
-              .filter(Boolean)
-              .join(" ")}
-          >
-            <img src={item.image} alt={item.name} />
-            <div className="ticket">
-              <h2>{item.name}</h2>
-              <p>{item.text}</p>
-            </div>
-          </section>
-        ))}
+        <section className="folio folio--page">
+          {PRODUCTS.map((item, index) => (
+            <article
+              key={item.slug}
+              id={item.slug}
+              className={[
+                "folio-row",
+                index % 2 === 1 ? "folio-row--flip" : "",
+                index === 0 ? "folio-row--core" : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+            >
+              <figure>
+                <img
+                  src={PRODUCT_IMAGES[item.slug] ?? item.image}
+                  alt={item.name}
+                />
+              </figure>
+              <div className="folio-copy">
+                <h3>{item.name}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </section>
 
         <section className="crop-close">
           <h2 className="section-title">Plan a programme.</h2>

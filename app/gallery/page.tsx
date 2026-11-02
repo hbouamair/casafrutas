@@ -15,6 +15,11 @@ export default function GalleryPage() {
           image="/images/gallery/farm.jpeg"
           imageAlt="Harvest in the field"
         />
+
+        <section className="manifesto" aria-label="Gallery note">
+          <p>Frames from the greenhouse, the packhouse and the market floor.</p>
+        </section>
+
         <section className="gallery-floor">
           <GalleryGrid />
         </section>

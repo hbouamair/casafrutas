@@ -12,22 +12,16 @@ export default function ContactPage() {
     <SiteShell overlay>
       <main id="main">
         <div className="desk">
-          <img
-            className="desk-photo"
-            src="/images/stock/market.jpg"
-            alt=""
-          />
+          <img className="desk-photo" src="/images/stock/market.jpg" alt="" />
           <iframe
             className="desk-map"
             title="Casa Frutas on Google Maps"
             src={mapSrc}
             loading="lazy"
           />
-          <div className="ticket desk-ticket ticket-form">
+          <div className="atelier-card desk-ticket ticket-form">
             <h1>Let&apos;s talk.</h1>
-            <p>
-              Office 3, Allen House. We reply within 24 hours.
-            </p>
+            <p>Office 3, Allen House. We reply within 24 hours.</p>
             <div className="desk-actions">
               <a className="btn" href="tel:+442085566919">
                 Call

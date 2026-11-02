@@ -9,7 +9,7 @@ export default function LoginPage() {
     <SiteShell overlay>
       <main id="main" className="login-floor">
         <img src="/images/hero-farm-1.jpg" alt="" />
-        <div className="ticket login-ticket ticket-form">
+        <div className="atelier-card login-ticket ticket-form">
           <LoginForm />
         </div>
       </main>

@@ -16,8 +16,8 @@ export function LoginForm() {
     <form onSubmit={onSubmit}>
       <h1>Login.</h1>
       <p className="login-lede">
-        Client portal for Casa Frutas buyers. Email info@casafrutas.com if you need
-        access now.
+        Client portal for Casa Frutas buyers. Email info@casafrutas.com if you
+        need access now.
       </p>
       <div className="field">
         <label htmlFor="login-email">Email</label>

@@ -17,6 +17,10 @@ export default function AboutPage() {
           imageAlt="CASA packing and greenhouse production"
         />
 
+        <section className="manifesto" aria-label="Our promise">
+          <p>{ABOUT_COPY.network}</p>
+        </section>
+
         <section className="tally" aria-label="Casa Frutas in numbers">
           <article>
             <p className="tally-value">300</p>
@@ -36,19 +40,20 @@ export default function AboutPage() {
           </article>
         </section>
 
-        <section className="house">
+        <section className="house house--folio">
           <img src="/images/brand/tomatoes-icon.png" alt="Fresh tomatoes with basil" />
           <div className="house-copy">
             <h2 className="section-title">{ABOUT_COPY.grow}</h2>
             <p className="lede">{ABOUT_COPY.aim}</p>
-            <Link className="btn" href="/products">
-              See the crop
-            </Link>
+            <div className="house-actions">
+              <Link className="btn" href="/products">
+                See the crop
+              </Link>
+              <Link className="house-link" href="/services">
+                How we work
+              </Link>
+            </div>
           </div>
-        </section>
-
-        <section className="quote-band">
-          <p>{ABOUT_COPY.network}</p>
         </section>
 
         <section className="trust">

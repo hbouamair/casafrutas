@@ -16,15 +16,29 @@ export default function TeamPage() {
           imageAlt="Casa Frutas commercial offices"
         />
 
-        <section className="stall stall--core" id="board">
+        <section className="manifesto" aria-label="Board note">
+          <p>
+            Hands on the crop. Names and portraits can be published here as soon
+            as the board is ready.
+          </p>
+        </section>
+
+        <section className="house house--folio" id="board">
           <img src="/images/stock/board.jpg" alt="Casa Frutas leadership" />
-          <div className="ticket">
-            <h2>Hands on the crop.</h2>
-            <p>
-              They oversee more than 40,000 tonnes a year and 300 hectares dedicated
-              to tomatoes, capsicums and courgettes. Names and portraits can be
-              published here as soon as the board is ready.
+          <div className="house-copy">
+            <h2 className="section-title">Close to the crop.</h2>
+            <p className="lede">
+              They oversee more than 40,000 tonnes a year and 300 hectares
+              dedicated to tomatoes, capsicums and courgettes.
             </p>
+            <div className="house-actions">
+              <Link className="btn" href="/contact">
+                Enquire
+              </Link>
+              <Link className="house-link" href="/join-us">
+                Careers
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -45,14 +59,6 @@ export default function TeamPage() {
             <p className="tally-value">365</p>
             <p className="tally-label">Days close to the crop</p>
           </article>
-        </section>
-
-        <section className="crop-close">
-          <h2 className="section-title">Talk to the house.</h2>
-          <p className="lede">Office 3, Allen House — we reply within 24 hours.</p>
-          <Link className="btn" href="/contact">
-            Enquire
-          </Link>
         </section>
       </main>
     </SiteShell>

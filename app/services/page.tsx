@@ -25,11 +25,24 @@ export default function ServicesPage() {
           </div>
         </PageMast>
 
-        <section className="line line--page">
-          {SERVICES.map((item) => (
-            <article key={item.slug} id={item.slug}>
-              <img src={item.image} alt="" />
-              <div>
+        <section className="manifesto" aria-label="How we work">
+          <p>
+            A greenhouse and outdoor network, graded to specification, moved to
+            Allen House and onwards across the UK.
+          </p>
+        </section>
+
+        <section className="folio folio--page">
+          {SERVICES.map((item, index) => (
+            <article
+              key={item.slug}
+              id={item.slug}
+              className={index % 2 === 1 ? "folio-row folio-row--flip" : "folio-row"}
+            >
+              <figure>
+                <img src={item.image} alt="" />
+              </figure>
+              <div className="folio-copy">
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </div>

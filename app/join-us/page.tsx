@@ -21,6 +21,13 @@ export default function JoinUsPage() {
           </div>
         </PageMast>
 
+        <section className="manifesto" aria-label="Open role">
+          <p>
+            One open role for now — Business Sales Executive — for someone who
+            thrives in fresh produce.
+          </p>
+        </section>
+
         <section className="role" id="role">
           <h2 className="section-title">Business Sales Executive</h2>
           <p className="lede">{JOB.pitch}</p>
