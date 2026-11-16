@@ -31,6 +31,9 @@ export function SiteFooter() {
             {item.label}
           </Link>
         ))}
+        <Link href="/join-us" className="footer-chip">
+          Careers
+        </Link>
         <Link href="/login" className="footer-chip">
           Login
         </Link>

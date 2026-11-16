@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "About" };
 
 export default function AboutPage() {
   return (
-    <SiteShell overlay>
+    <SiteShell classic>
       <main id="main">
         <PageMast
           title="The house."
@@ -58,7 +58,7 @@ export default function AboutPage() {
 
         <section className="trust">
           <img
-            src="/images/brand/certificates.png"
+            src="/images/brand/certificates-row.png"
             alt="Our certificates: GLOBALG.A.P., GLOBALG.A.P. GRASP, ICS, Sedex and BRCGS Food Safety"
           />
         </section>

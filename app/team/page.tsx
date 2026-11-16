@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Board" };
 
 export default function TeamPage() {
   return (
-    <SiteShell overlay>
+    <SiteShell classic>
       <main id="main">
         <PageMast
           title="The board."

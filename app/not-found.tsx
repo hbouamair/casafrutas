@@ -3,7 +3,7 @@ import { SiteShell } from "@/components/SiteShell";
 
 export default function NotFound() {
   return (
-    <SiteShell>
+    <SiteShell classic>
       <main id="main" className="section">
         <p className="hero-kicker">404</p>
         <h1 className="section-title">That page is not on the stall.</h1>

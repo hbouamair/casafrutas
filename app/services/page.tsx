@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Services" };
 
 export default function ServicesPage() {
   return (
-    <SiteShell overlay>
+    <SiteShell classic>
       <main id="main">
         <PageMast
           title="Grow. Grade. Move."

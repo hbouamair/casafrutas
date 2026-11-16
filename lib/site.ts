@@ -15,12 +15,11 @@ export const COMPANY = {
 };
 
 export const NAV = [
-  { href: "/about", label: "About" },
-  { href: "/products", label: "Produce" },
+  { href: "/about", label: "About Us" },
+  { href: "/products", label: "Products" },
+  { href: "/team", label: "Team" },
   { href: "/services", label: "Services" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/team", label: "Board" },
-  { href: "/join-us", label: "Careers" },
   { href: "/contact", label: "Contact" },
 ] as const;
 

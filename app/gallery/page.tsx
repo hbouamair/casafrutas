@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Gallery" };
 
 export default function GalleryPage() {
   return (
-    <SiteShell overlay>
+    <SiteShell classic>
       <main id="main">
         <PageMast
           title="The floor."

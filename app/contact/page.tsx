@@ -9,7 +9,7 @@ export default function ContactPage() {
   const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(COMPANY.mapQuery)}&z=15&output=embed`;
 
   return (
-    <SiteShell overlay>
+    <SiteShell classic>
       <main id="main">
         <div className="desk">
           <img className="desk-photo" src="/images/stock/market.jpg" alt="" />

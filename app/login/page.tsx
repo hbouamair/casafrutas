@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Login" };
 
 export default function LoginPage() {
   return (
-    <SiteShell overlay>
+    <SiteShell classic>
       <main id="main" className="login-floor">
         <img src="/images/hero-farm-1.jpg" alt="" />
         <div className="atelier-card login-ticket ticket-form">

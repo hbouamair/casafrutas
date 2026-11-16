@@ -4,9 +4,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
+import { SocialIcons } from "@/components/SocialIcons";
 import { NAV } from "@/lib/site";
 
-export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
+export function SiteHeader({
+  overlay = false,
+  classic = false,
+}: {
+  overlay?: boolean;
+  classic?: boolean;
+}) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -37,9 +44,11 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     };
   }, [open]);
 
+  const links = NAV;
+
   const headerClass = [
     "site-header",
-    overlay ? "is-overlay" : "is-solid",
+    classic ? "is-classic" : overlay ? "is-overlay" : "is-solid",
     scrolled ? "is-scrolled" : "",
     open ? "is-open" : "",
   ]
@@ -50,20 +59,31 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     <>
       <header className={headerClass}>
         <div className="dock">
-          <Logo />
+          <Logo purple={classic} />
           <nav className="dock-nav" aria-label="Primary">
-            {NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="nav-item"
-                aria-current={pathname === item.href ? "page" : undefined}
-              >
-                {item.label}
-              </Link>
+            {links.map((item, index) => (
+              <span className="nav-slot" key={item.href}>
+                {classic && index > 0 ? (
+                  <span className="nav-pipe" aria-hidden="true">
+                    |
+                  </span>
+                ) : null}
+                <Link
+                  href={item.href}
+                  className="nav-item"
+                  aria-current={pathname === item.href ? "page" : undefined}
+                >
+                  {item.label}
+                </Link>
+              </span>
             ))}
           </nav>
           <div className="header-actions">
+            {classic ? (
+              <div className="header-social">
+                <SocialIcons />
+              </div>
+            ) : null}
             <Link className="header-login" href="/login">
               Login
             </Link>
@@ -92,7 +112,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
         aria-label="Mobile"
       >
         <div className="mobile-nav__links">
-          {NAV.map((item) => (
+          {links.map((item) => (
             <Link
               key={item.href}
               href={item.href}

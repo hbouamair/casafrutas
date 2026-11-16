@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Careers" };
 
 export default function JoinUsPage() {
   return (
-    <SiteShell overlay>
+    <SiteShell classic>
       <main id="main">
         <PageMast
           title="Join the house."

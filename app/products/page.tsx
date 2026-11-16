@@ -9,13 +9,24 @@ export const metadata: Metadata = { title: "Produce" };
 
 const CROPS = PRODUCTS.map(({ slug, name }) => ({ slug, name }));
 
+const CROP_RAIL = [
+  "Tomatoes",
+  "Capsicums",
+  "Courgettes",
+  "Onions",
+  "Citrus",
+  "Soft fruit",
+  "Leaf",
+  "Year-round supply",
+];
+
 const PRODUCT_IMAGES: Record<string, string> = {
   tomatoes: "/images/banners/untitled-33.jpg",
 };
 
 export default function ProductsPage() {
   return (
-    <SiteShell overlay>
+    <SiteShell classic>
       <main id="main">
         <PageMast
           title="The crop."
@@ -34,9 +45,46 @@ export default function ProductsPage() {
 
         <section className="manifesto" aria-label="Produce programme">
           <p>
-            A full fresh-produce programme — graded and packed to customer
-            specification, all year.
+            Mainly tomatoes — and everything in fresh produce. A full programme,
+            graded and packed to customer specification, all year.
           </p>
+        </section>
+
+        <div className="crop-rail" aria-hidden="true">
+          <div className="crop-rail__track">
+            {[...CROP_RAIL, ...CROP_RAIL].map((item, i) => (
+              <span key={`${item}-${i}`}>{item}</span>
+            ))}
+          </div>
+        </div>
+
+        <section className="atelier">
+          <header className="atelier-head">
+            <h2 className="section-title">The programme.</h2>
+            <p className="lede">
+              Tomatoes at the centre, with peppers, courgettes, onions and a
+              rotating seasonal offer.
+            </p>
+          </header>
+
+          <div className="atelier-stage">
+            <Link className="atelier-core" href={`#${PRODUCTS[0].slug}`}>
+              <img src={PRODUCT_IMAGES.tomatoes} alt={PRODUCTS[0].name} />
+              <div className="atelier-core__copy">
+                <h3>{PRODUCTS[0].name}</h3>
+                <p>{PRODUCTS[0].text}</p>
+              </div>
+            </Link>
+
+            <div className="atelier-strip">
+              {PRODUCTS.slice(1).map((item) => (
+                <Link key={item.slug} href={`#${item.slug}`}>
+                  <img src={item.image} alt="" />
+                  <span>{item.name}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
         </section>
 
         <CropIndex items={CROPS} />
